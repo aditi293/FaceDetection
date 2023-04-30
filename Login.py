@@ -1,22 +1,35 @@
 import tkinter as tk
 
+def verify_login():
+    username = username_entry.get()
+    password = password_entry.get()
+    if username == "myusername" and password == "mypassword":
+        message_label.config(text="Login successful")
+    else:
+        message_label.config(text="Incorrect username or password")
+
 root = tk.Tk()
+root.geometry("800x670")
+root.title("Login")
 
-# Set the window size
-root.geometry("800x600")
+tk.Label(root, text="Login Form", font=("Times New Roman", 25)).place(x=250, y=50)
 
-# Set the background image
-bg_image = tk.PhotoImage(file="bg.png")
-bg_label = tk.Label(root, image=bg_image)
-bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+username_label = tk.Label(root, text="Username:", font=("Times New Roman", 23))
+username_label.place(x=100,y=150)
 
+username_entry = tk.Entry(root)
+username_entry.place(x=280,y=150)
 
-button1 = tk.Button(root, text="Button 1")
-button1.place(relx=0.3, rely=0.5,x=50,y=50)
+password_label = tk.Label(root, text="Password:", font=("Times New Roman", 23))
+password_label.place(x=100,y=200)
 
-button2 = tk.Button(root, text="Button 2")
-button2.place(relx=0.7, rely=0.5,x=100,y=100)
+password_entry = tk.Entry(root, show="*")
+password_entry.place(x=280,y=200)
 
-# Add widgets here
+login_button = tk.Button(root, text="Login", command=verify_login, font=("Times New Roman", 20), width=10,height=1)
+login_button.place(x=250,y=280)
+
+message_label = tk.Label(root, text="", font=("Times New Roman", 20))
+message_label.pack()
 
 root.mainloop()
