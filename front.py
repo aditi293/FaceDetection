@@ -1,6 +1,13 @@
 import tkinter as tk
+import subprocess
 
 root = tk.Tk()
+
+def open_register():
+    subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\Register.py"])
+
+def open_login():
+        subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\Login.py"])
 
 # Set the window size
 root.geometry("800x600")
@@ -11,11 +18,13 @@ bg_label = tk.Label(root, image=bg_image)
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
-button1 = tk.Button(root, text="Button 1")
-button1.place(relx=0.3, rely=0.5,x=50,y=50)
+button1 = tk.Button(root, text="REGISTER",font=("Times New Roman Bold",10), width=20, height=2,command=open_register)
+button1.place(relx=0.1, rely=0.5, anchor='w')
 
-button2 = tk.Button(root, text="Button 2")
-button2.place(relx=0.7, rely=0.5,x=100,y=100)
+button2 = tk.Button(root, text="LOGIN",font=("Times New Roman Bold",10), width=20,height=2, command=open_login)
+button2.place(relx=0.1, rely=0.65, anchor='w')
+
+# Button(text="Register",font=20,width=15,height=1,command=open_login).place(x=360,y=580)
 
 # Add widgets here
 
