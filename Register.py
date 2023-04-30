@@ -1,17 +1,12 @@
 import tkinter as tk
 from tkinter import*
 from tkinter import messagebox
+import re
 
 import subprocess
 
 def open_login():
-    subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\Login.py"])
-
-
-# Button(text="Submit", command=open_new_page).pack()
-
-
-
+    subprocess.Popen(["python", "C:\\Users\\hp\\Desktop\\FaceDetection\\Login.py"])
 
 def register():
     first = firstValue.get()
@@ -40,16 +35,15 @@ frame.configure(bg='light blue')
 frame.pack(fill=tk.BOTH, expand=True)
 
 
-
-Label(root,text="Registration Form",font="arial 25").place(x=250,y=50)
-Label(text="First Name",font=23).place(x=100,y=150)
-Label(text="Last Name",font=23).place(x=100,y=200)
-Label(text="Gender",font=23).place(x=100,y=250)
-Label(text="PhoneNumber",font=23).place(x=100,y=300)
-Label(text="Email",font=23).place(x=100,y=350)
-Label(text="Age",font=23).place(x=100,y=400)
-Label(text="Password",font=23).place(x=100,y=450)
-Label(text="Confirm Password",font=23).place(x=100,y=500)
+Label(root,text="Registration Form",fg="blue",bg="light blue",font="arial 25").place(x=280,y=50)
+Label(text="First Name",bg="light blue",font=23).place(x=100,y=150)
+Label(text="Last Name",bg="light blue",font=23).place(x=100,y=200)
+Label(text="Gender",bg="light blue",font=23).place(x=100,y=250)
+Label(text="PhoneNumber",bg="light blue",font=23).place(x=100,y=300)
+Label(text="Email",bg="light blue",font=23).place(x=100,y=350)
+Label(text="Age",bg="light blue",font=23).place(x=100,y=400)
+Label(text="Password",bg="light blue",font=23).place(x=100,y=450)
+Label(text="Confirm Password",bg="light blue",font=23).place(x=100,y=500)
 
 firstValue=StringVar()
 lastValue=StringVar()
@@ -70,14 +64,15 @@ lastEntry.place(x=280,y=200)
 entries.append(lastEntry)
 genderOptions = ["Male", "Female", "Other"]
 genderValue = StringVar()
-genderValue.set("Choose your Gender")
+genderValue.set("Choose any option")
 genderMenu = OptionMenu(root, genderValue, *genderOptions)
-genderMenu.config(width=27, font=20)
+genderMenu.config(width=27,bd=1, font=13)
 genderMenu.place(x=280, y=250)
 entries.append(genderMenu)
 phoneEntry=Entry(root,textvariable=PhoneValue,width=30,bd=2,font=20)
 phoneEntry.place(x=280,y=300)
 entries.append(phoneEntry)
+
 emailEntry=Entry(root,textvariable=EmailValue,width=30,bd=2,font=20)
 emailEntry.place(x=280,y=350)
 entries.append(emailEntry)
@@ -104,7 +99,7 @@ checkValue=IntVar
 checkbtn=Checkbutton(text="remember me?",variable=checkValue)
 checkbtn.place(x=290,y=550)
 
-Button(text="Register",font=20,width=15,height=1,command=register).place(x=360,y=580)
+Button(text="Register",bg="light gray",font=20,width=18,height=1,command=register).place(x=310,y=600)
 def register():
     first = firstValue.get()
     last = lastValue.get()
@@ -120,14 +115,6 @@ def register():
     elif password != confirm_password:
         messagebox.showerror("Error", "Passwords do not match!")
     else:
-        # Perform registration logic here
-        # If successful, show success message and open login page
-        # Otherwise, show error message
         messagebox.showinfo("Success", "Registration successful!")
         open_login()
-
-
-# Button(text="Register",font=20,width=15,height=1,command=open_login).place(x=360,y=580)
-
-
 root.mainloop()
