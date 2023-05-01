@@ -40,5 +40,8 @@ verify_button.pack(pady=10)
 message_label = tk.Label(root, text="")
 message_label.pack()
 
+regenerate_button = tk.Button(root, text="Regenerate OTP", command=generate_otp,bg="white",width=20,bd=1)
+regenerate_button.pack(pady=10)
+
 # Run the Tkinter main loop
 root.mainloop()
