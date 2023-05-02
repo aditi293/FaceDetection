@@ -4,16 +4,16 @@ import subprocess
 root = tk.Tk()
 
 def open_register():
-    subprocess.Popen(["python", "C:\\Users\\hp\\Desktop\\FaceDetection\\Register.py"])
+    subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\Register.py"])
 
 def open_login():
-        subprocess.Popen(["python", "C:\\Users\\hp\\Desktop\\FaceDetection\\Login.py"])
+        subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\Login.py"])
 
 # Set the window size
-root.geometry("1000x900")
+root.geometry("1024x1024")
 
 # Set the background image
-bg_image = tk.PhotoImage(file="bg.png")
+bg_image = tk.PhotoImage(file="bb.png")
 bg_label = tk.Label(root, image=bg_image)
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 

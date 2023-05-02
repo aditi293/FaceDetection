@@ -9,7 +9,9 @@ import re
 import subprocess
 
 def open_login():
-    subprocess.Popen(["python", "C:\\Users\\hp\\Desktop\\FaceDetection\\Login.py"])
+    subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\Login.py"])
+def open_capture():
+    subprocess.Popen(["python", "C:\\Users\\Hp\\PycharmProjects\\Frontend\\FaceDetection\\capture.py"])
 
 def register():
     first = firstValue.get()
@@ -38,7 +40,7 @@ def register():
 root=tk.Tk
 root=Tk()
 root.title("Registration")
-root.geometry("800x670")
+root.geometry("800x800")
 root.resizable(False,False)
 form_frame = tk.Frame(root, width=650, height=780, bd=2, relief="groove",bg="blue")
 form_frame.pack(padx=20, pady=20)
@@ -117,6 +119,12 @@ checkbtn=Checkbutton(text="remember me?",variable=checkValue)
 checkbtn.place(x=290,y=550)
 
 Button(text="Register",bg="light gray",font=20,width=18,height=1,command=register).place(x=310,y=600)
+Button(text="Capture",bg="light gray",font=20,width=18,height=1,command=open_capture).place(x=310,y=650)
+
+
+# button2 = tk.Button(root, text="Capture",font=("Times New Roman Bold",20), width=18,height=1, command=open_capture)
+
+
 def register():
     first = firstValue.get()
     last = lastValue.get()
@@ -134,4 +142,6 @@ def register():
     else:
         messagebox.showinfo("Success", "Registration successful!")
         open_login()
+
+# Button(text="Capture",bg="light gray",font=20,width=18,height=1,command=open_capture).place(x=310,y=600)
 root.mainloop()
